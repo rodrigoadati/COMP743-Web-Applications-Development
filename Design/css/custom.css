@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin-right: auto; margin-left: auto;	
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+
+section.section-list {
+	color: #666;
+	text-align: center;
+	padding: 40px 0 20px;
+}
+
+section.section-list .section-list-header {
+	color: #fff;
+	padding: 20px 0; margin-bottom: 20px;
+	background: #000;
+	height: 80px;
+}
+
+section.section-list a.thumbnail {
+	min-height: 320px;
+}
+
+section.section-list h2 {
+	margin: 0; padding: 0;
+}
+
+section.section-list h4 {
+	margin: 0; padding: 0; 
+}
+
+/*** Top Banner ***/
+section.top-banner {
+	height: 60px;
+	background: #4388CC;
+}
+
+/*** Header ***/
+header.header {
+	padding: 20px 0 20px;
+}
+
+header .input-group {
+	margin-top: 14px;
+}
+/*** Navigation ***/
+
+
+
+/*** Featured ***/
+section#featured {
+	min-height: 820px;
+}
+
+
+/*** Banner Medium ***/
+section.banner-md {
+	margin-top: 20px;
+	height: 120px;
+	background: #FF0000;
+}
+
+/*** Banner Large ***/
+section.banner-lg {
+	height: 300px;
+	background: #333;
+}
+
+/*** Pre Footer ***/
+section.pre-footer {
+	height: 400px;
+	background: #999;
+}
+
+/*** Footer ***/
+footer {
+	height: 140px;
+	background: #000;
+}
+
