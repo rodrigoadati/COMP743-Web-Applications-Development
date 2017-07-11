@@ -60,6 +60,24 @@ section#featured {
 }
 
 
+/*** Best Sellers ***/
+section#best-sellers {
+	min-height: 820px;
+}
+
+section#best-sellers .section-list-header{
+	background: #CC0000;
+}
+
+/*** Top Categories ***/
+section#top-categories {
+	min-height: 520px;
+}
+
+section#top-categories .section-list-header{
+	background: #003399;
+}
+
 /*** Banner Medium ***/
 section.banner-md {
 	margin-top: 20px;
@@ -73,15 +91,29 @@ section.banner-lg {
 	background: #333;
 }
 
-/*** Pre Footer ***/
+
+/*** Pre-Footer ***/
 section.pre-footer {
-	height: 400px;
-	background: #999;
+	color: #ccc;
+	font-size: 10pt;
+	padding: 40px 0;
+	background: #666;
+}
+
+section.pre-footer h6{
+	color: #fff;
+}
+
+section.pre-footer a{
+	color: #ccc;
 }
 
 /*** Footer ***/
 footer {
-	height: 140px;
+	text-align: center;
+	color: #ccc;
+	font-size: 10pt;
+	padding: 8px 0;
 	background: #000;
 }
 
