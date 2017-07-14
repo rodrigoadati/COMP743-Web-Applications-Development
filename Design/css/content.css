@@ -63,19 +63,42 @@ section#product-main .product-filter {
 	height: 800px;
 	color: #666;
 	font-size: small;
-	background: #efefef;
 }
 
-section#product-main .product-filter h6{
+section#product-main .product-filter h6 {
 	margin-top:20px; margin-bottom: 6px;
 	border-bottom: 1px solid #ccc;
 }
 
-section#product-main .product-filter a{
+section#product-main .product-filter a {
 	padding: 0 4px;
 }
 
 /*** Product List ***/
-section#product-main .product-list {
-	padding: 14px;
+section#product-main .product-container {
+}
+
+
+/*** Product Sort ***/
+.product-sort {
+	margin: 0; padding: 0; 
+	color: #666;
+	font-size: small;
+}
+
+.product-sort.navbar {
+	min-height: 0;
+}
+
+
+section#product-main .product-sort a {
+	margin: 0; padding: 6px 12px; 
+	color: #337ab7;
+}
+
+/*** Product Pagelist ***/
+.product-pagelist {
+	font-size: small;
+	border-bottom: 1px solid #ccc; 
+	padding: 6px;
 }

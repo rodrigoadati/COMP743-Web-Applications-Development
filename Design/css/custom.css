@@ -15,6 +15,10 @@ h2 {
 	margin: 0; padding: 0;
 }
 
+.navbar {
+	border-radius: 0;
+}
+
 .section-list-header {
 	text-align: center;
 	color: #fff;
