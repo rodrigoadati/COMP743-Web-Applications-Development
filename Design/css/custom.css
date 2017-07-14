@@ -10,30 +10,24 @@ body {
 	overflow-x: hidden;
 }
 
-
-section.section-list {
-	color: #666;
-	text-align: center;
-	padding: 40px 0 20px;
-}
-
-section.section-list .section-list-header {
-	color: #fff;
-	padding: 20px 0; margin-bottom: 20px;
-	background: #000;
-	height: 80px;
-}
-
-section.section-list a.thumbnail {
-	min-height: 320px;
-}
-
-section.section-list h2 {
+h2 {
+	font-weight: bold;
 	margin: 0; padding: 0;
 }
 
-section.section-list h4 {
-	margin: 0; padding: 0; 
+.section-list-header {
+	text-align: center;
+	color: #fff;
+	padding: 10px 0; margin-bottom: 10px;
+	background: #000;
+}
+
+.text-container {
+	padding: 0 20px; 
+}
+
+a.thumbnail {
+	min-height: 320px;
 }
 
 /*** Top Banner ***/
@@ -50,33 +44,10 @@ header.header {
 header .input-group {
 	margin-top: 14px;
 }
+
 /*** Navigation ***/
 
 
-
-/*** Featured ***/
-section#featured {
-	min-height: 820px;
-}
-
-
-/*** Best Sellers ***/
-section#best-sellers {
-	min-height: 820px;
-}
-
-section#best-sellers .section-list-header{
-	background: #CC0000;
-}
-
-/*** Top Categories ***/
-section#top-categories {
-	min-height: 520px;
-}
-
-section#top-categories .section-list-header{
-	background: #003399;
-}
 
 /*** Banner Medium ***/
 section.banner-md {
@@ -95,6 +66,7 @@ section.banner-lg {
 /*** Pre-Footer ***/
 section.pre-footer {
 	color: #ccc;
+	margin-top: 20px;
 	font-size: 10pt;
 	padding: 40px 0;
 	background: #666;
@@ -107,6 +79,7 @@ section.pre-footer h6{
 section.pre-footer a{
 	color: #ccc;
 }
+
 
 /*** Footer ***/
 footer {

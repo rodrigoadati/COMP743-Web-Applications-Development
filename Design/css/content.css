@@ -1,0 +1,81 @@
+
+section.section-list {
+	color: #666;
+	min-height: 320px;
+	padding: 40px 0 20px;
+}
+
+section.section-list h4 {
+	margin: 0; padding: 0; 
+}
+
+/*** Main ***/
+section#main .section-list-header {
+	background: #0066ff;
+}
+
+/*** Featured ***/
+section#featured {
+	min-height: 820px;
+}
+
+section#featured .section-list-header {
+	background: #336600;
+}
+
+/*** Best Sellers ***/
+section#best-sellers {
+	min-height: 780px;
+}
+
+section#best-sellers .section-list-header {
+	background: #CC0000;
+}
+
+/*** Top Categories ***/
+section#top-categories {
+	min-height: 480px;
+}
+
+section#top-categories .section-list-header {
+	background: #003399;
+}
+
+
+/*** Department Categories ***/
+section#department-categories {
+	margin-top: 20px; 
+	min-height: 320px;
+}
+
+section#department-categories .section-list-header {
+	background: #003399;
+}
+
+/*** Product Main ***/
+section#product-main {
+
+}
+
+/*** Product Filter ***/
+section#product-main .product-filter {
+	padding: 14px;
+	height: 800px;
+	color: #666;
+	font-size: small;
+	background: #efefef;
+}
+
+section#product-main .product-filter h6{
+	margin-top:20px; margin-bottom: 6px;
+	border-bottom: 1px solid #ccc;
+}
+
+section#product-main .product-filter a{
+	padding: 0 4px;
+}
+
+/*** Product List ***/
+section#product-main .product-list {
+	padding: 14px;
+}
