@@ -1,0 +1,7 @@
+Username:<br>
+<input type="text" name="username" #username>
+<br> Password:
+<br>
+<input type="password" name="password" #password>
+<br><br>
+<button type="button" (click)="userExists(username.value, password.value)">Sign In</button>
