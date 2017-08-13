@@ -1,3 +1,28 @@
-<p>
-  signup works!
-</p>
+<div class="container">
+  <h2>SIGN UP</h2>
+  <form (ngSubmit)="createAccount(f)" #f="ngForm">
+    <div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Password" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input type="text" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" ngModel>
+      </div>
+      <button type="submit" class="btn btn-default">Create Account</button>
+    </div>
+  </form>
+</div>
