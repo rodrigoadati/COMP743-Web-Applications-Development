@@ -102,3 +102,43 @@ section#product-main .product-sort a {
 	border-bottom: 1px solid #ccc; 
 	padding: 6px;
 }
+
+
+
+/*** Product Detail Main ***/
+section#product-detail-main {
+	padding: 10px 32px;
+	background-color: #ffffff;
+}
+
+section#product-detail-main .product-detail-header {
+
+}
+
+section#product-detail-main h1 {
+	margin: 0; margin-top: 8px; 
+	font-weight: bold;
+}
+
+
+section#product-detail-main h2, h3, h4 {
+	padding: 0;	margin: 4 0;
+	font-weight: bold;
+}
+
+section#product-detail-content {
+	margin: 0; padding: 20px 32px 60px;
+	background: #ffffff;
+	min-height: 420px;
+}
+
+.product-detail-container {
+	padding: 4px; 
+}
+
+
+section#product-detail-info {
+	margin-top: 20px; 
+	font-size: 12px;
+	font-weight: bold;
+}
