@@ -40,13 +40,13 @@
                     </div>
                 </td>
                 <td>
-                    <strong>${{product.price}}</strong>
+                    <strong>{{product.price}}</strong>
                 </td>
                 <td>
                     <p-spinner size="15" [(ngModel)]="product.number_of_item" [min]="1" [max]="99"></p-spinner>
                 </td>
                 <td>
-                    <strong>${{product.price * product.number_of_item}}</strong>
+                    <strong>{{(product.price * product.number_of_item)  | currency:'USD':true:'1.2-2'}}</strong>
                 </td>
                 <td>
                     <a class="fa fa-times" (click)="removeItem(product.id)"></a>
@@ -59,7 +59,7 @@
             <td colspan="2">
                 <div>
                     <span>Total: </span>
-                    <strong>{{total}}</strong>
+                    <strong>{{total | currency:'USD':true:'1.2-2'}}</strong>
                 </div>
             </td>
         </tr>

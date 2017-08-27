@@ -21,12 +21,4 @@ export class SharedCart {
     clean(){
         this.cart = [];
     }
-
-    getTotal(){
-       for(let product of this.cart){
-           this.total = this.total + (product.price * product.number_of_item);
-       }
-
-       return this.total;
-    }
 }

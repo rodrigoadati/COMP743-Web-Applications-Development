@@ -12,89 +12,19 @@ import { SharedWishlist } from './../../shared/SharedWishlist';
 })
 
 export class EditComponent implements OnInit {
-    constructor(private router: Router,private cookieService: CookieService, private sharedCart:SharedCart, private sharedWishlist:SharedWishlist) {
+    items: MenuItem[];
+    isMyAccount: boolean;
+    isMainAddress: boolean;
+    isChangePassword: boolean;
+    isMyOrder: boolean;
+
+    constructor(private router: Router, private cookieService: CookieService, private sharedCart: SharedCart, private sharedWishlist: SharedWishlist) {
 
     }
 
-    items: MenuItem[];
-
     ngOnInit() {
-        this.items = [
-            {
-                label: 'File',
-                icon: 'fa-file-o',
-                items: [{
-                    label: 'New',
-                    icon: 'fa-plus',
-                    items: [
-                        { label: 'Project' },
-                        { label: 'Other' },
-                    ]
-                },
-                { label: 'Open' },
-                { separator: true },
-                { label: 'Quit' }
-                ]
-            },
-            {
-                label: 'Edit',
-                icon: 'fa-edit',
-                items: [
-                    { label: 'Undo', icon: 'fa-mail-forward' },
-                    { label: 'Redo', icon: 'fa-mail-reply' }
-                ]
-            },
-            {
-                label: 'Help',
-                icon: 'fa-question',
-                items: [
-                    {
-                        label: 'Contents'
-                    },
-                    {
-                        label: 'Search',
-                        icon: 'fa-search',
-                        items: [
-                            {
-                                label: 'Text',
-                                items: [
-                                    {
-                                        label: 'Workspace'
-                                    }
-                                ]
-                            },
-                            {
-                                label: 'File'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Actions',
-                icon: 'fa-gear',
-                items: [
-                    {
-                        label: 'Edit',
-                        icon: 'fa-refresh',
-                        items: [
-                            { label: 'Save', icon: 'fa-save' },
-                            { label: 'Update', icon: 'fa-save' },
-                        ]
-                    },
-                    {
-                        label: 'Other',
-                        icon: 'fa-phone',
-                        items: [
-                            { label: 'Delete', icon: 'fa-minus' }
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Quit', icon: 'fa-minus'
-            }
-        ];
+        this.setMenu();
+        this.openMenu("account"); //opens default menu
     }
 
     logout() {
@@ -103,5 +33,51 @@ export class EditComponent implements OnInit {
         this.sharedCart.clean();
         this.sharedWishlist.clean();
         this.router.navigate(['/']);
+    }
+
+    setMenu() {
+        this.items = [
+            {
+                label: 'My Account',
+                icon: 'fa fa-user-circle-o',
+                command: (onclick) => {this.openMenu("account");}
+            },
+            {
+                label: 'Main Address',
+                icon: 'fa fa-location-arrow',
+                command: (onclick) => {this.openMenu("address");}
+            },
+            {
+                label: 'Change Password',
+                icon: 'fa fa-lock',
+                command: (onclick) => {this.openMenu("password");}
+            },
+            {
+                label: 'My Orders',
+                icon: 'fa fa-list-alt',
+                command: (onclick) => {this.openMenu("order");}
+            }
+        ];
+    }
+
+    openMenu(menuItem: string)  {
+        console.log('entered open menu');
+        this.isMyAccount = false;
+        this.isMainAddress = false;
+        this.isChangePassword = false;
+        this.isMyOrder = false;
+
+        if (menuItem == "account"){
+            this.isMyAccount = true;
+        }
+        else if (menuItem == "address") {
+            this.isMainAddress = true;
+        }
+        else if (menuItem == "password") {
+            this.isChangePassword = true;
+        }
+        else if (menuItem == "order") {
+            this.isMyOrder = true;
+        }
     }
 }

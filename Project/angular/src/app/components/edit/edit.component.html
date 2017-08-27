@@ -1,6 +1,177 @@
-<p-menubar [model]="items">
-    <button icon="fa-sign-out" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" (click)="logout()">
-        <span class="ui-button-icon-left ui-clickable fa fa-fw fa-sign-out"></span>
-        <span class="ui-button-text ui-clickable">Logout</span>
-    </button>
-</p-menubar>
+<div class="container">
+    <p-menubar [model]="items">
+        <button icon="fa-sign-out" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" (click)="logout()">
+            <span class="ui-button-icon-left ui-clickable fa fa-fw fa-sign-out"></span>
+            <span class="ui-button-text ui-clickable">Logout</span>
+        </button>
+    </p-menubar>
+
+    <!-- MY ACCOUNT -->
+    <form class="form-edit-client" *ngIf="isMyAccount">
+        <div class="shadow-box main-border">
+            <div class="submit-box">
+                <div class="row-fluid">
+                    <div>
+                        <h3>
+                            Edit Account <small>Edit your personal data below</small>
+                        </h3>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" ngModel>
+                </div>
+                <div>
+                    <button class="btn button-main"><i class="fa fa-check-square-o"></i>&nbsp;Save Information</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- MY ACCOUNT END -->
+
+    <!-- MAIN ADDRESS -->
+    <form class="form-edit-client" *ngIf="isMainAddress">
+        <div class="shadow-box main-border">
+            <div class="submit-box">
+                <div class="row-fluid">
+                    <div>
+                        <h3>
+                            Main Address <small>Edit your personal data below</small>
+                        </h3>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-home span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="City" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-globe span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="State" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope-open-o span-size" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code" ngModel>
+                </div>
+                <div>
+                    <button class="btn button-main"><i class="fa fa-check-square-o"></i>&nbsp;Save Information</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- ADDRESS END -->
+
+    <!-- CHANGE PASSWORD -->
+    <form class="form-edit-client" *ngIf="isChangePassword">
+        <div class="shadow-box main-border">
+            <div class="submit-box">
+                <div class="row-fluid">
+                    <div>
+                        <h3>
+                            Change Password <small>Edit your personal data below</small>
+                        </h3>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw span-size" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw span-size" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" ngModel>
+                </div>
+                <div>
+                    <button class="btn button-main"><i class="fa fa-check-square-o"></i>&nbsp;Save Information</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- CHANGE PASSWORD END -->
+
+    <!-- MY ORDER -->
+    <form class="form-edit-client" *ngIf="isMyOrder">
+        <div class="shadow-box main-border">
+            <div class="submit-box">
+                <div class="row-fluid">
+                    <div>
+                        <h3>
+                            My Order <small>Edit your personal data below</small>
+                        </h3>
+                    </div>
+                </div>
+                <div>
+                    <div class="caixa-sombreada">
+                        <table class="table tabela-pedidos">
+                            <thead class="cor-secundaria">
+                                <tr>
+                                    <th class="span3">
+                                        <h5>Number</h5>
+                                    </th>
+                                    <th class="span3 hidden-phone-portrait">
+                                        <h5>Date</h5>
+                                    </th>
+                                    <th class="span3">
+                                        <h5>Status</h5>
+                                    </th>
+                                    <th class="span3">
+                                        <h5>Total</h5>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <b>51194</b>
+                                    </td>
+                                    <td class="hidden-phone-portrait">
+                                        <span>27/11/2015 19:34</span>
+                                    </td>
+                                    <td>
+                                        <b class="text-success">
+                                      Pedido Enviado
+                                    </b>
+                                    </td>
+                                    <td>
+                                        <span>R$ 157,90</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>51148</b>
+                                    </td>
+                                    <td class="hidden-phone-portrait">
+                                        <span>27/11/2015 18:02</span>
+                                    </td>
+                                    <td>
+                                        <b class="text-error">
+                                      Pedido Cancelado
+                                    </b>
+                                    </td>
+                                    <td>
+                                        <span>R$ 148,90</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- My ORDER END -->
+</div>

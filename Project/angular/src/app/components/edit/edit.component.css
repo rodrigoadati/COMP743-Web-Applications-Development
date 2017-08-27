@@ -44,3 +44,42 @@
     font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 1em;
 }
+
+/**My Account**/
+.form-edit-client .shadow-box {
+    margin-top: -2px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-width: 1px;
+    border-color: rgba(228, 230, 231, 0.89);
+}
+
+.shadow-box {
+    padding: 20px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.25);
+}
+.main-border {
+    border-width: 1px 0 0;
+    border-style: solid;
+}
+
+.button-main {
+    color: #FFF;
+    background-color: #f07030;
+    box-shadow: 3px 3px 3px #CE5F28 !important;
+    width: 100%;
+    
+}
+.button-main:hover {
+    background-color: #E0895E;
+    box-shadow: 3px 3px 3px #E06B31 !important;
+}
+
+.submit-box{
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.span-size{
+    width: 30px;
+}
