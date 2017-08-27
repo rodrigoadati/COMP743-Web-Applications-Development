@@ -5,7 +5,6 @@ import { Menu } from './model/Menu';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
   title = 'COMP743 - Web Development';

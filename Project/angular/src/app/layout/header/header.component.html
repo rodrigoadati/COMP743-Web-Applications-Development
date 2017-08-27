@@ -1,6 +1,10 @@
+<!-- <div *ngIf="isLogged()">
+	<p-slideMenu #menu [model]="items" [popup]="true">
+	</p-slideMenu>
+</div> -->
+
 <!-- Top Banner -->
 <section id="top-banner" class="top-banner"></section>
-
 <!-- Header -->
 <header id="header" class="header">
 	<div class="container">
@@ -13,8 +17,8 @@
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search">
 				<span class="input-group-btn">
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<button type="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</button>
 				</span>
 			</div>
@@ -25,47 +29,32 @@
 <!-- Navbar -->
 <nav id="nav" class="nav navbar navbar-default">
 	<div class="container">
-
 		<div class="navbar-collapse collapse">
 			<!-- Department Menu -->
 			<ul class="nav navbar-nav navbar-left" *ngFor='let menu of menus'>
 				<li><a routerLink="{{menu.path}}/{{menu.name}}">{{menu.name}}</a></li>
 			</ul>
-
 			<!-- User Menu -->
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="/login">
-							<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-							<small>{{username}}</small>
-						</a>
+					<a ref="return false;" (click)="redirectTo('edit')">
+						<span class="glyphicon glyphicon-user" aria-hidden="true" ></span>
+						<small>{{username}}</small>
+					</a>
 				</li>
 				<li>
-					<a href="/login">
-							<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-							<small>Cart</small>
-						</a>
+					<a ref="return false;" (click)="redirectTo('cart')">
+						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+						<small>Cart</small>
+					</a>
 				</li>
 				<li>
-					<a href="/login">
-							<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-							<small>Wishlist</small>
-						</a>
+					<a ref="return false;" (click)="redirectTo('wishlist')">
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						<small>Wishlist</small>
+					</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 </nav>
-<!-- <div *ngIf="dataService.isDepartment">
-	<section id="main" class="main">
-		<div class="section-list-header">
-			<h2>{{departmentName}}</h2>
-		</div>
-		<ul class="nav nav-justified">
-			<li><a href="#">Games</a></li>
-			<li><a href="#">Consoles</a></li>
-			<li><a href="#">Accessories</a></li>
-		</ul>
-		<img src="../assets/images/main-image-1.png" alt="image 1" class="img-responsive" />
-	</section>
-</div> -->

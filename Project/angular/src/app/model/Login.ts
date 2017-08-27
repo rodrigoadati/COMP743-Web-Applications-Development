@@ -1,5 +1,7 @@
 export class Login{
+    Customer_id:number;
     id:number;
-    username:string;
     password:string;
+    profile:string;
+    username:string;
 }

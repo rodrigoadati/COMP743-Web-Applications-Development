@@ -1,8 +1,13 @@
-Username:<br>
-<input type="text" name="username" #username>
-<br> Password:
-<br>
-<input type="password" name="password" #password>
-<br><br>
-<button type="button" (click)="userExists(username.value, password.value)">Sign In</button>
-<a routerLink="/signup">Not a member? Signup</a>
+<div class="container">
+    <p-growl [(value)]="msgs" life="3000"></p-growl>
+    <div class="input-group margin-bottom-sm">
+        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+        <input class="form-control" type="text" placeholder="Username" #username>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+        <input class="form-control" type="password" placeholder="Password" #password>
+    </div>
+    <button type="button" (click)="userExists(username.value, password.value)">Sign In</button>
+    <a routerLink="/signup">Not a member? Signup</a>
+</div>

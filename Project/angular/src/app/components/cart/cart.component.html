@@ -1,0 +1,77 @@
+<div style="text-align:center" *ngIf="isCartEmpty()">
+    <h1>YOUR CART IS EMPTY</h1>
+</div>
+
+<div class="shadow-box" *ngIf="!isCartEmpty()">
+    <table class="table table-cart">
+        <!--Table Head-->
+        <thead>
+            <tr>
+                <th colspan="2" width="45%">
+                    <h6>Product</h6>
+                </th>
+                <th width="15%">
+                    <h6>Unit Price</h6>
+                </th>
+                <th width="15%">
+                    <h6>Quantity</h6>
+                </th>
+                <th width="15%">
+                    <h6>Subtotal</h6>
+                </th>
+                <th width="10%">
+                    <h6>Remove</h6>
+                </th>
+            </tr>
+        </thead>
+
+        <!--Table Body-->
+        <tbody *ngFor='let product of carts'>
+            <tr>
+                <td>
+                    <div class='image-container'>
+                        <a routerLink="/itemdetails/{{product.id}}">
+                        <img src="{{product.image_path}}" alt="{{product.name}}"></a>
+                    </div>
+                </td>
+                <td>
+                    <div style="text-align:left">
+                        <a routerLink="/itemdetails/{{product.id}}">{{product.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <strong>${{product.price}}</strong>
+                </td>
+                <td>
+                    <p-spinner size="15" [(ngModel)]="product.number_of_item" [min]="1" [max]="99"></p-spinner>
+                </td>
+                <td>
+                    <strong>${{product.price * product.number_of_item}}</strong>
+                </td>
+                <td>
+                    <a class="fa fa-times" (click)="removeItem(product.id)"></a>
+                </td>
+            </tr>
+        </tbody>
+        <!--Subtotal-->
+        <tr>
+            <td colspan="4">&nbsp;</td>
+            <td colspan="2">
+                <div>
+                    <span>Total: </span>
+                    <strong>{{total}}</strong>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+            <td colspan="2">
+                <div class="product-detail-container">
+                    <button (click)="finalizePurchase()" class="btn btn-primary button-finalize-payment">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>Finish
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

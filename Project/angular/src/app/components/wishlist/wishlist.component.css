@@ -1,0 +1,52 @@
+.table-data{
+    text-align: center;    
+}
+
+.table-text{
+    text-align: left;
+    vertical-align: middle;
+}
+
+table {
+    margin-left: 200px;
+    max-width: 70%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.abas-conteudo {
+    border-width: 2px;
+    border-color: #e4e6e7;
+}
+
+.borda-alpha, .borda-alpha * {
+    border-color: rgba(0,0,0,0.13);
+}
+
+.abas-conteudo {
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: block;
+}
+
+img{
+    max-width: 64px;
+    max-height: 64px;
+}

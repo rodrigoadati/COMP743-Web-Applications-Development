@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service'; //Imported service module
 import { Product } from  '../../model/Product';
+import { SharedData } from '../../shared/SharedData';
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
 })
+
 export class MainComponent implements OnInit {
-  //Declaration of variables and objects
   products: Product[];
   bestSellers: Product[];
   topCategories: Product[];   
 
-  //Dependency injection in the constructor
-  constructor(private productService:ProductService ) 
-  { 
-    
-  }
+  constructor(private productService:ProductService, private data:SharedData ) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe((p)=> { //returns a observable, need to subscribe
@@ -25,6 +22,7 @@ export class MainComponent implements OnInit {
       this.products = p;
       this.bestSellers = p;
       this.topCategories = p;
+      this.data.storage= p;
     }); 
   }
 }

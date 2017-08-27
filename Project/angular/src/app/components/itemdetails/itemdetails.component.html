@@ -1,4 +1,69 @@
+<!-- Product Detali -->
+<div class="container">
+  <p-growl [(value)]="msgs" life="3000"></p-growl>
+  <!-- Product Detail Main -->
+  <section id="product-detail-main" class="product-detail-main">
+    <div class="row">
+      <!-- Product Detail Heade -->
+      <div class="product-detail-header col-sm-10">
+        <h1>{{product.name}}</h1>
+      </div>
 
-<p>
-  itemdetails works!
-</p>
+    </div>
+    <div class="row" *ngIf='isGame()'>
+      <div class="col-sm-12">
+        <h4>Rockstar Games</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="product-detail-content">
+    <div class="media">
+      <!-- Product Image -->
+      <div class="media-left">
+        <img src="{{product.image_path}}" style="max-width:300px;max-height:400px;">
+      </div>
+      <div class="media-body product-detail-container">
+        <!-- Product Price -->
+        <div class="product-detail-container">
+          <h2><span class="item-price">{{product.detail}}</span></h2>
+        </div>
+        <!-- Product Add to cart -->
+        <div class="product-detail-container" *ngIf='isAvailable()'>
+          <button (click)="addToCart()">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </div>
+        <!-- Product Add to wishlist -->
+        <div class="product-detail-container">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <small><a ref="return false;" (click)="addToWishlist()">Add to Wishlist</a></small>
+        </div>
+        <!-- About the product -->
+        <div class="product-detail-container">
+          <h4>About the product</h4>
+          <ul>
+            <li>{{product.description}}</li>
+          </ul>
+        </div>
+
+        <section id="product-detail-info" *ngIf='isGame()'>
+          <div class="col-sm-3">
+            Publisher:<br /> Rockstar Games
+          </div>
+          <div class="col-sm-3">
+            Developer:<br /> Rockstar North
+          </div>
+          <div class="col-sm-3">
+            Category:<br /> Action, Adventure
+          </div>
+          <div class="col-sm-3">
+            ESRB Rating<br />
+            <img src="../assets/images/Logo/esrb_m.gif" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,138 @@
+.table-cart * {
+    text-align: center;
+    vertical-align: middle;
+}
+
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    background-color:#f44242;
+    color: white;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+.shadow-box {
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #4c595e;
+    background-color: #2B383D;
+}
+body {
+    font-family: 'Open Sans' ,sans-serif;
+    background-color: #2b383d;
+    background-position: top center;
+    background-attachment: scroll;
+    background-repeat: repeat;
+}
+body {
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    color: #666;
+}
+body {
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    background-color: #fff;
+}
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+* {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+img{
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.image-container{
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.span12 {
+    width: 100%;
+}
+
+button, html input[type="button"]{
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, input, select, textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.product-detail-container {
+	padding: 4px; 
+}
+.button-finalize-payment{
+    width: 80%;
+    height: 100%;
+    background-color: #4289f4;
+
+}

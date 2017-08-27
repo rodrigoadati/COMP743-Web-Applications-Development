@@ -15,7 +15,7 @@
 			<h2>FEATURED PRODUCTS</h2>
 		</div>
 		<div class="section-list-item col-sm-3" *ngFor="let product of products">
-			<a href="#" class="thumbnail">
+			<a routerLink="/itemdetails/{{product.id}}" class="thumbnail">
 				<img src="{{product.image_path}}" alt="{{product.name}}">
 				<div class="text-container">
 					<h4>{{product.name}}</h4>
@@ -37,7 +37,7 @@
 			<h2>BEST SELLERS</h2>
 		</div>
 		<div class="section-list-item col-sm-3" *ngFor="let seller of bestSellers">
-			<a href="#" class="thumbnail">
+			<a routerLink="/itemdetails/{{seller.id}}" class="thumbnail">
 				<img src="{{seller.image_path}}" alt="{{seller.name}}">
 				<div class="text-container">
 					<h4>{{seller.name}}</h4>
@@ -54,7 +54,7 @@
 			<h2>Top Categories</h2>
 		</div>
 		<div class="section-list-item col-sm-3" *ngFor="let category of topCategories">
-			<a href="#" class="thumbnail">
+			<a routerLink="/itemdetails/{{category.id}}" class="thumbnail">
 					<img src="{{category.image_path}}" alt="{{category.name}}">
 					<div class="text-container">
 						<h4>{{category.name}}</h4>

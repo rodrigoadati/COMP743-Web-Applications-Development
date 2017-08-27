@@ -1,37 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-import { Product } from  '../../model/Product';
-
+import { Product } from '../../model/Product';
+import { SharedData } from '../../shared/SharedData';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
 })
 export class DepartmentComponent implements OnInit {
-  //Declaration of variables and objects
-  features: Product[];
-  bestSellers: Product[];
-  topCategories: Product[]; 
-  departments: Product[];  
-  departmentName:string;
-  isDepartment:boolean = true;
+  departmentProducts: Product[];
+  departmentName: string;
+  isDepartment: boolean = true;
 
-  constructor(private productService:ProductService, private activatedRoute: ActivatedRoute) {
-    
-   }
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private data:SharedData) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((param: Params) => {
+    this.getDepartmentName();
+    this.getProductByDepartment();
+  }
+
+  //Get products based on the category and department
+  getCategoryProducts(category: string) {
+    this.productService.getCategoryProducts(category, this.departmentName).subscribe((p) => {
+      this.departmentProducts = p;
+      this.data.storage = p;
+    });
+  }
+
+  //Get the name of the selected department
+  private getDepartmentName() {
+    this.activatedRoute.params.subscribe((param: Params) => {//This event will be fired every time the parameter value changes
       this.departmentName = param['departmentName'];
     });
+  }
 
-    this.productService.getProducts().subscribe((p)=> { //returns a observable, need to subscribe
-      this.features = p;
-      this.bestSellers = p;
-      this.topCategories = p;
-      this.departments = p;
-    }); 
+  //Get products based on the department
+  private getProductByDepartment() {
+    this.activatedRoute.params.subscribe((param: Params) => {
+      this.productService.getProductByDepartment(this.departmentName).subscribe((p) => {
+        this.departmentProducts = p;
+        this.data.storage = p;
+      });
+    });
   }
 }

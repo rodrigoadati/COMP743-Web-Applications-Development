@@ -1,0 +1,36 @@
+<div style="text-align:center" *ngIf="isWishlistEmpty()">
+    <h1>YOUR WISHLIST IS EMPTY</h1>
+</div>
+
+<p-growl [(value)]="msgs" life="3000"></p-growl>
+
+<table class="table table-data ">
+    <tbody *ngFor='let product of wishlists'>
+        <tr>
+            <td class="table-data">
+                <div>
+                    <a routerLink="/itemdetails/{{product.id}}">
+                        <img src="{{product.image_path}}" alt="{{product.name}}">
+                    </a>
+                </div>
+            </td>
+            <td class="table-text">
+                <div>
+                    <a routerLink="/itemdetails/{{product.id}}">{{product.name}}</a>
+                </div>
+            </td>
+            <td class="table-text">
+                <div>
+                    <a title="Buy" (click)="addToCart(product.id)">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </td>
+            <td class="table-text">
+                <a title="Remove" (click)="removeItem(product.id)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

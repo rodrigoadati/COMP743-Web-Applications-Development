@@ -5,7 +5,6 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
   customer: Customer;
@@ -20,7 +19,5 @@ export class SignupComponent implements OnInit {
     console.log(this.customer.firstName);
     console.log(this.customer.lastName);
     console.log(this.customer.password);
-    // console.log("customer: " + this.customer);
   }
-
 }

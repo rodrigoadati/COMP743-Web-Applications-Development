@@ -1,0 +1,46 @@
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+    border: 1px solid #2399e5;
+    color: #FFFFFF;
+    background: #2399e5;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.ui-button {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin-right: .1em;
+    text-decoration: none!important;
+    cursor: pointer;
+    text-align: center;
+    zoom: 1;
+    overflow: visible;
+}
+
+.ui-widget, .ui-widget * {
+    box-sizing: border-box;
+}
+
+.ui-corner-all {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.ui-state-default {
+    border: 1px solid #d6d6d6;
+    background: #ffffff;
+    color: #555555;
+}
+
+.ui-widget {
+    font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
