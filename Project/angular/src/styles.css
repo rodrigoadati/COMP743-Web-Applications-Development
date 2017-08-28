@@ -18,6 +18,18 @@ section#main .section-list-header {
 	background: #0066ff;
 }
 
+/*** Main-Login ***/
+section#main-login {
+	padding: 40px;
+	min-height: 740px;
+}
+
+section#main-login .input-group {
+	text-align: center;
+	width: 460px;
+}
+
+
 /*** Featured ***/
 section#featured {
 	min-height: 820px;
