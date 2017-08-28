@@ -17,4 +17,8 @@ export class LoginService extends DataService {
     checkUser(login:Login){
         return super.requestPOST('checkUser', login);
     }
+
+    changePassword(login:Login){
+        return super.requestPOST('changePassword', login);
+    }
 }

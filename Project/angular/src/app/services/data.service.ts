@@ -12,18 +12,18 @@ export class DataService {
   }
 
   //Create the url path
-  createURL(url: string) {
+  private createURL(url: string) {
     return 'http://slimapp/' + url;
   }
 
-  requestGET(path: string) {
+  protected requestGET(path: string) {
     return this.http.get(this.createURL(path))
       .map(res => res.json())
       .catch(this.handleErrorObservable);
   }
 
-  requestPOST(path: string, object: Object) {
-    let header = new Headers({ 'Content-Type': 'application/json'});
+  protected requestPOST(path: string, object: Object) {
+    let header = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: header });
     return this.http.post(this.createURL(path), object, options)
       .map(res => res.json())

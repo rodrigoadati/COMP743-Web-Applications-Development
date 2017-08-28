@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { DataService } from './data.service';
 import { Product } from '../model/Product';
+import { Order } from '../model/Order';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
 
@@ -16,11 +17,11 @@ export class ProductService extends DataService {
         return super.requestGET('products');
     }
 
-    getCategoryProducts(category:string, departmentName:string) {
+    getCategoryProducts(category: string, departmentName: string) {
         return super.requestGET('category/' + departmentName + '&' + category);
     }
 
-    getProductByDepartment(departmentName:string){
+    getProductByDepartment(departmentName: string) {
         return super.requestGET('department/' + departmentName);
     }
 
@@ -28,5 +29,11 @@ export class ProductService extends DataService {
         return super.requestPOST('products/add', product);
     }
 
+    getOrder(customerId: number) {
+        return super.requestGET('orders/' + customerId);
+    }
 
+    addOrder(order: Order) {
+        return super.requestPOST('orders/add', order);
+    }
 }

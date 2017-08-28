@@ -1,8 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedCart } from '../../shared/SharedCart';
 import { Product } from '../../model/Product';
+import { Order } from '../../model/Order';
+import { Result } from '../../model/result';
+import { ProductService } from '../../services/product.service';
 import { SpinnerModule } from 'primeng/primeng';
 import { DoCheck, KeyValueDiffers } from '@angular/core';
+import { Message } from 'primeng/primeng';
+import { CookieService } from 'angular2-cookie/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-cart',
@@ -14,10 +20,15 @@ export class CartComponent implements OnInit, DoCheck {
     product: Product;
     total: number;
     differ: any;
-    @Input() carts:Product[];
+    order: Order;
+    result: Result;
+    msgs: Message[] = [];
+    @Input() carts: Product[];
 
-    constructor(private sharedCart: SharedCart, private iterableDiffers: KeyValueDiffers) {
+    constructor(private sharedCart: SharedCart, private iterableDiffers: KeyValueDiffers, private productService: ProductService, private cookieService: CookieService, private router: Router) {
         this.total = 0;
+        this.order = new Order;
+        this.result = new Result;
     }
 
     ngDoCheck() {
@@ -25,18 +36,18 @@ export class CartComponent implements OnInit, DoCheck {
             var objDiffer = this.differ[elt.id];
             var objChanges = objDiffer.diff(elt);
             if (objChanges) {
-              objChanges.forEachChangedItem((elt) => {
-                  //console.log('Item changed');
-                  this.total = this.getTotal();
-              });
+                objChanges.forEachChangedItem((elt) => {
+                    //console.log('Item changed');
+                    this.total = this.getTotal();
+                });
             }
-          });
+        });
     }
 
     ngOnInit() {
         this.setCart();
         this.differ = {};
-        this.carts.forEach((elt)=> {
+        this.carts.forEach((elt) => {
             this.differ[elt.id] = this.iterableDiffers.find(elt).create(null);
         });
         this.total = this.getTotal();
@@ -61,15 +72,43 @@ export class CartComponent implements OnInit, DoCheck {
     }
 
     //Calculates the total value of the cart
-    getTotal(){
+    getTotal() {
         //Initialize the variable
         this.total = 0;
 
         //Loop the list to get the total value
-        for(let product of this.carts){
+        for (let product of this.carts) {
             this.total = this.total + (product.price * product.number_of_item);
         }
- 
+
         return this.total;
-     }
+    }
+
+
+    finalizePurchase() {
+        this.order.Customer_id = +this.cookieService.get('id');
+        this.order.status = 'Order Completed';
+        this.order.total = this.total;
+
+        this.productService.addOrder(this.order).subscribe((p) => {
+            this.result = p;
+        });
+
+
+        this.showMessageSuccess('Purchase concluded');
+        this.sharedCart.clean();
+        setTimeout(() => this.changePage(), 2000);
+    }
+
+    showMessageError(message: string) {
+        this.msgs.push({ severity: 'error', detail: message });
+    }
+
+    showMessageSuccess(message: string) {
+        this.msgs.push({ severity: 'success', detail: message });
+    }
+
+    changePage() {
+        this.router.navigate(['/']);
+    }
 }

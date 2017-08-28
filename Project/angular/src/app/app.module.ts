@@ -11,6 +11,7 @@ import { DataService } from './services/data.service'; //Import services module
 import { MenuService } from './services/menu.service';
 import { LoginService } from './services/login.service';
 import { ProductService } from './services/product.service';
+import {CustomerService} from './services/customer.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { MessagesModule } from 'primeng/primeng';
@@ -91,7 +92,7 @@ const appRoutes: Routes = [
     SpinnerModule,
     MenubarModule
   ],
-  providers: [DataService, MenuService, LoginService, ProductService, CookieService, SharedData, SharedWishlist, SharedCart], //Imported services
+  providers: [DataService, MenuService, LoginService, ProductService, CustomerService,CookieService, SharedData, SharedWishlist, SharedCart], //Imported services
   bootstrap: [AppComponent]
 })
 export class AppModule { }

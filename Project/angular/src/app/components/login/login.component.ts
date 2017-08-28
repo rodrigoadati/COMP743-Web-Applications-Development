@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       else {
         this.login = p;
         this.cookieService.put('username', this.login[0].username);
+        this.cookieService.put('id', this.login[0].Customer_id.toString());
         this.router.navigate(['/']);
         window.location.reload();
       }

@@ -1,32 +1,112 @@
+<p-messages [(value)]="msgs"></p-messages>
 <div class="container">
-  <h2>SIGN UP</h2>
-  <form (ngSubmit)="createAccount(f)" #f="ngForm">
-    <div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ngModel>
+  <section id="main-signup">
+    <div class="container text-center">
+      <div class="row">
+        <div class="row-fluid">
+          <div>
+            <h3>
+              Sign Up <small>Input your personal data below</small>
+            </h3>
+          </div>
+        </div>
+
+        <form (ngSubmit)="createAccount(f)" #f="ngForm">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-home span-size" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building span-size" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="city" name="city" placeholder="City" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-globe span-size" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="state" name="state" placeholder="State" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-open-o span-size" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code" ngModel>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-offset-3 text-left">
+            <button type="submit" class="btn btn-primary btn-md">Create Account</button>
+          </div>
+        </form>
       </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ngModel>
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ngModel>
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Username" ngModel>
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="password" class="form-control" pPassword id="password" name="password" placeholder="Password" ngModel>
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
-        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password"  ngModel>
-      </div>
-      <button type="submit" class="btn btn-default">Create Account</button>
     </div>
-  </form>
+  </section>
 </div>
