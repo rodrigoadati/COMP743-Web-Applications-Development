@@ -33,6 +33,7 @@ import { ItemdetailsComponent } from './components/itemdetails/itemdetails.compo
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SearchComponent } from './components/search/search.component';
 
 import { SharedData } from './shared/SharedData';
 import { SharedCart } from './shared/SharedCart';
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
       { path: 'cart', component: CartComponent },
       { path: 'wishlist', component: WishlistComponent },
       { path: 'edit', component: EditComponent },
+      { path: 'search/:search', component: SearchComponent },
       { path: '', component: HeaderComponent, outlet: 'header' },
       { path: '', component: FooterComponent, outlet: 'footer' }
     ]
@@ -75,7 +77,8 @@ const appRoutes: Routes = [
     ItemdetailsComponent,
     CartComponent,
     WishlistComponent,
-    EditComponent
+    EditComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

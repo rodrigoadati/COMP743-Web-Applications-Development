@@ -25,6 +25,10 @@ export class ProductService extends DataService {
         return super.requestGET('department/' + departmentName);
     }
 
+    getProductSearch(search:string){
+        return super.requestGET('products/' + search);
+    }
+
     addProduct(product: Product): Observable<Product[]> {
         return super.requestPOST('products/add', product);
     }

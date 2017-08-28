@@ -10,11 +10,6 @@
       </div>
 
     </div>
-    <div class="row" *ngIf='isGame()'>
-      <div class="col-sm-12">
-        <h4>Rockstar Games</h4>
-      </div>
-    </div>
   </section>
 
   <section id="product-detail-content">
@@ -46,24 +41,7 @@
             <li>{{product.description}}</li>
           </ul>
         </div>
-
-        <section id="product-detail-info" *ngIf='isGame()'>
-          <div class="col-sm-3">
-            Publisher:<br /> Rockstar Games
-          </div>
-          <div class="col-sm-3">
-            Developer:<br /> Rockstar North
-          </div>
-          <div class="col-sm-3">
-            Category:<br /> Action, Adventure
-          </div>
-          <div class="col-sm-3">
-            ESRB Rating<br />
-            <img src="../assets/images/Logo/esrb_m.gif" />
-          </div>
-        </section>
       </div>
     </div>
   </section>
 </div>
-
