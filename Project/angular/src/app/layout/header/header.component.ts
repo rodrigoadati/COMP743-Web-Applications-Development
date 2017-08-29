@@ -7,6 +7,7 @@ import { SlideMenuModule, MenuItem } from 'primeng/primeng';
 import { MenuModule } from 'primeng/primeng';
 import { SharedCart } from './../../shared/SharedCart';
 import { SharedWishlist } from './../../shared/SharedWishlist';
+import { Message } from 'primeng/primeng';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
   menus: Menu[];
   username: string;
   items: MenuItem[];
+  msgs: Message[] = [];
 
   constructor(private router: Router, private menuService: MenuService, private cookieService: CookieService, private sharedCart:SharedCart, private sharedWishlist:SharedWishlist) { }
 
@@ -77,6 +79,10 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectToSearch(search:string){
-    this.router.navigate(['search/' + search]);
+    if(search != "")
+      this.router.navigate(['search/' + search]);
+    else
+      this.msgs.push({ severity: 'info', detail: "Please input a filter" });
+    
   }
 }
